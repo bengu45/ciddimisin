@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KAYIT OL</title>
+  
+    <style>
+
+   
+        .renk{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner-img"></div>
+   <div class="textr">
+ Kullanıcı Adı:  <input type="text" id="kullaniciadi" placeholder="Kullanıcı Adı"><br>
+   Şifre: <input type="password" id="sifre" placeholder="Şifre"><br>
+   Şifre Tekrar: <input type="password" id="sifretekrar" placeholder="Şifre Tekrar"><br>
+    <button type="button" onclick="kontrol()">Kayıt Ol</button>
+    <p class="renk" id="renk"></p></div>
+
+    <script>
+       alert("Siteye Kaydolmanız Gerekiyor");
+        function kontrol(){
+            var ad,sifre,sifretekrar;
+             ad=document.getElementById("kullaniciadi").value.lenght;
+    
+             sifre=document.getElementById("sifre").value.lenght;
+             sifretekrar=document.getElementById("sifretekrar").value.lenght;
+             if(ad==0 || sifre==0){
+                 text="Kullanıcı Adı ve Şifre Alanı Boş Bırakılamaz.";
+             }
+             else if(sifre<8){
+                 text="Şifre En Az Sekiz Karakterden Oluşmalıdır.";
+             }
+             else if(sifre!=sifretekrar){
+                 text="Şifreler Aynı Değil.";
+             }
+             if(ad>3 || ad<20){
+                 text="Kullanıcı Adı 3-20 Karakter Arası Olmalı.";
+
+             }
+             else{
+             text="Kayıt Başarılı , Diğer Sayfaya Yönlendiriliyorsunuz...";
+             }
+             document.getElementById("renk").innerHTML=text;
+        } 
+       
+    </script>
+</body>
+</html>
+</body>
+</html>

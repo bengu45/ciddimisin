@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" method="POST" onsubmit="return validation();">
+    <input type="text" name="name" id="name"><br>
+    <input type="email" name="email" id="email"><br>
+    <input type="password" name="password" id="password"><br>
+    <input type="submit" name="submit" value="Insert Now">
+    </form>
+    <div id="eresult" style="color: red;"></div>
+    <script >
+        function validation(){
+          var name=document.getElementById('name').value;
+          var email=document.getElementById('email').value;
+          var password=document.getElementById('password').value;
+          if(name=='' || password=='' || email==''){
+             document.getElementById("eresult").innerHTML = "hepsi gerekli alan";
+              return false;
+          }
+          else if(name.length<4){
+              document.getElementById("eresult").innerHTML= "doldurbe kardeşim";
+              return false;
+          }
+          else if(password.length<4){
+              document.getElementById("eresult").innerHTML= "doldurbe kardeşim";
+              return false;
+          }
+          else{
+              return true;
+          }
+        }
+    </script>
+</body>
+</html>

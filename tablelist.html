@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td:hover{background: hotpink;}
+        
+ </style>
+</head>
+<body>
+    <table id="table" border="1" class="renk">
+    <tr>
+        <th>ad</th>
+        <th>soyad</th>
+        <th>yaş</th>
+
+    </tr>
+    <tr>
+        <td>ad1</td>
+        <td>soyad1</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>ad2</td>
+        <td>soyad2</td>
+        <td>20</td>
+
+    </tr>
+    <tr>
+        <td>ad3</td>
+        <td>soyad3</td>
+        <td>30</td>
+
+    </tr>
+    <tr>
+        <td>ad4</td>
+        <td>soyad4</td>
+        <td>40</td>
+
+    </tr>
+    <tr>
+        <td>ad5</td>
+        <td>soyad5</td>
+        <td>50</td>
+
+    </tr>
+</table>
+<script>
+    var table=document.getElementById("table"),rIndex,cIndex;
+    if(table!=null){
+          for(var i =0; i<table.rows.length;i++){
+        for(var j=0;j<table.rows[i].cells.length; j++){
+    table.rows[i].cells[j].onclick=function(){{ getval(this); };
+    }
+    function getval(cel) {
+           
+            cel.style.backgroundColor="pink";
+            
+        }
+  
+        
+        
+        
+        
+    };
+    
+        }
+    }
+    butonKoltuk.forEach(function (element) {
+        
+        element.onclick=function(e){
+           e.target.parentNode.className='selected';
+           var tablo=document.getElementById('koltuklar'),
+           selected=tablo.getElementsByClassName('selected');
+            goster.textContent +=(" "+this.textContent);
+          
+      
+    var  ne= parseInt(element.getAttribute("data-price")); 
+    var toplam=0;
+    sepet +=ne;
+    toplam=sepet; 
+    document.getElementById("sonuc").innerHTML=toplam+"₺";  
+
+     // document.getElementById("fiyat").innerHTML=sepet;
+    // e.target.parentNode.className = 'selected';
+     // document.getElementById('goster');
+    //  selected = goster.getElementsByClassName('selected');  //renk
+    //koltuklar.onclick = highlight;
+
+            }
+              
+           });
+
+
+</script>
+</body>
+</html>

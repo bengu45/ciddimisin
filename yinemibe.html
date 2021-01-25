@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol</title>
+    <link rel="stylesheet"  href="style.css">
+    <style>
+        .renk{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner-img"> </div>
+  <div class="textr">
+      Kullanıcı Adı:<input type="text" id="kullaniciadi" placeholder="Kullanıcı Adı" /><br>
+      Şifre:<input type="password" id="sifre" placeholder="Şifre"/><br>
+      Şifre Tekrar:<input type="password" id="sifretekrar" placeholder="Şifre Tekrar"/><br>
+      <button type="button" onclick="kontrol()">Kayıt Ol</button>
+      <p class="renk" id="renk"></p>
+  </div>
+   <script>
+
+       function kontrol() {
+         
+           var ad, sifree, sifretekrarr,text;
+           ad=document.getElementById('kullaniciadi').value.length;
+           sifree=document.getElementById("sifre").value.length;
+           sifretekrarr=document.getElementById("sifretekrar").value.length;
+ console.log(ad);
+           if (ad == 0 || sifree == 0) { 
+               console.log("çalışş");
+               text= "Lütfen Alanları Boş Bırakmadığınıza Emin Olun.";
+           }
+           else if (sifree < 8) {
+               text= "Şifre En Az Sekiz Karakterden Oluşmalıdır.";
+           }
+           else if (sifree != sifretekrarr) {
+               text= "Girdiğiniz Şifreler Birbirleriyle Aynı Değildir.";
+           }
+           else if (ad > 3 || ad < 20) {
+                text= "Kullanıcı Adı 3 ve 20 Karakter Arası Olmalıdır.";
+           }
+         
+           else {
+               text= "Kayıt Başarılı";
+           }
+           document.getElementById("renk").innerHTML=text;
+       }
+   </script>
+</body>
+</html>

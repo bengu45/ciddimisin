@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOLTUK REZERVASYON</title>
+    <style> 
+        .renk{
+        background: gray;
+        }
+        
+        .yazirengi{
+            color: white;
+        }
+        td {border: 1px #DDD solid; padding: 5px; cursor: pointer;}
+        
+        .selected {
+            background-color: gray;
+            color: grey;
+        }
+        body{
+            background-color: black;
+        }
+      .sayfa{
+          width: 360px;
+         
+      }
+        table{
+            background:gray;
+        }
+        table .buton{
+            width: 50px;
+            background:red;
+            text-align: center;
+            line-height: 60px;
+            font-size: 1.5em;
+        }
+        .renk{
+            color: black;
+        }
+    </style>
+         <script>
+            function checkAlert(){
+                if(document.Form1.checkbox1.checked==true){
+                    alert("Salon 1:Fantastik Canavarlar");
+                  
+                }
+          else if(document.Form1.checkbox2.checked== true){
+                alert("Salon 2:Karanlık Zihinler");
+            }
+           
+          else if(document.Form1.checkbox3.checked== true){
+                alert("Salon 3:Beceriksiz Katil");
+            }
+            }
+        </script>
+</head>
+<body>
+   
+   
+    
+   
+    
+  
+  
+    <div class="sayfa" id="hey">
+    <table>
+        
+        <tr>
+            <td colspan="5" id="goster"></td>
+        </tr>
+    
+    </table>
+
+</div>
+<div id="sonuc" class="yazirengi"></div>
+<table id="koltuklar" class="renk"></table>
+ 
+    <script>
+         
+      var koltuklar=[
+          [
+              {
+                  text:'A1',
+                  price:15,
+                    rezerve:false
+                },
+                {
+                    text:'A2',
+                    price:15,
+                    rezerve:true
+                },
+                {
+                    text:'A3',
+                    price:15
+                },
+                {
+                    text:'A4',
+                    price:15
+                }
+        ],
+        [
+            {
+                text:'B1',
+                price:30
+            },
+            {
+                text:'B2',price:30},{text:'B3',price:30},{text:'B4',price:30}],[{text:'C1',price:50},{text:'C2',price:50},{text:'C3',price:50},{text:'C4',price:50}]];
+      console.log(koltuklar);
+      
+      koltuklar.forEach((i,k)=>{
+          console.log("tr");
+        var tr=document.createElement("tr");
+        i.forEach(j=>{
+        var td=document.createElement("td");
+        td.innerText=j.text;
+        if(!j.rezerve){
+        td.classList.add('buton');
+        td.classList.add('butonKoltuk');
+        }
+       
+        td.setAttribute("data-price",j.price);
+        tr.appendChild(td);
+        })
+   document.getElementById("koltuklar").appendChild(tr);
+    });
+        var butonKoltuk=document.querySelectorAll(".butonKoltuk");
+        var Goster=document.querySelector("#goster")
+        var sepet=0;
+
+        butonKoltuk.forEach(function (element) {
+        
+            element.onclick=function(e){
+               e.target.parentNode.className='selected';
+               var tablo=document.getElementById('koltuklar'),
+               selected=tablo.getElementsByClassName('selected');
+                goster.textContent +=(" "+this.textContent);
+              
+          
+          var  ne= parseInt(element.getAttribute("data-price")); 
+        var toplam=0;
+        sepet +=ne;
+        toplam=sepet; 
+        document.getElementById("sonuc").innerHTML=toplam+"₺";  
+
+         // document.getElementById("fiyat").innerHTML=sepet;
+        // e.target.parentNode.className = 'selected';
+         // document.getElementById('goster');
+        //  selected = goster.getElementsByClassName('selected');  //renk
+        //koltuklar.onclick = highlight;
+
+                }
+                  
+               });
+
+
+
+
+
+       // document.getElementById("goster").disabled=true;
+             // 
+           // function hesapla(){
+           // butonKoltuk.forEach(element => {
+            //if(element.checked){
+               // var fiyat = parseInt(element.getAttribute("data-price"));
+               // var toplam =fiyat*kk;
+               // alert(toplam);
+         // }
+       // });
+      //}
+//
+         </script>
+</body>
+</html>

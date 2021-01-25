@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script language="javascript">
+        function numaralar() {
+
+            var sayac = 0;
+
+            do {
+                var n1 = Math.round(8 * Math.random()) + 1;
+                var sonuc1 = document.loto.sonuctop1.value = n1;
+
+                var n2 = Math.round(8 * Math.random()) + 1;
+                var sonuc2 = document.loto.sonuctop2.value = n2;
+
+                var n3 = Math.round(8 * Math.random()) + 1;
+                var sonuc3 = document.loto.sonuctop3.value = n3;
+
+                var n4 = Math.round(8 * Math.random()) + 1;
+                var sonuc4 = document.loto.sonuctop4.value = n4;
+
+                var n5 = Math.round(8 * Math.random()) + 1;
+                var sonuc5 = document.loto.sonuctop5.value = n5;
+
+                var n6 = Math.round(8 * Math.random()) + 1;
+                var sonuc6 = document.loto.sonuctop6.value = n6;
+               
+               var  kontroln1=document.loto.Top1.value;
+               var  kontroln2=document.loto.Top2.value;
+               var  kontroln3=document.loto.Top3.value;
+               var  kontroln4=document.loto.Top4.value;
+               var  kontroln5=document.loto.Top5.value;
+               var  kontroln6=document.loto.Top6.value;
+   sayac =sayac+1;
+
+            }while(!((sonuc1==kontroln1 && sonuc2 == kontroln2 && sonuc3==kontroln3 && sonuc4==kontroln4 && sonuc5==kontroln5 && sonuc6==kontroln6) || sayac >= 10000))
+
+
+                if( sonuc1==kontroln1 && sonuc2==kontroln2 && sonuc3==kontroln3 && sonuc4==kontroln4 && sonuc5==kontroln5 && sonuc6==kontroln6){
+                    alert("Helal Para Kazandın :D");
+                   
+                   document.bgColor="red";
+                }
+                else{
+                    alert("Kazanamadın denemeye devam");
+                }
+            }
+        
+    </script>
+</head>
+
+<body>
+    <form name="loto">
+        Lütfen 6 Numara Girin <br />
+        Top #1 <input type="text" size="1"  name="Top1"><br/>
+        Top #2 <input type="text" size="1" name="Top2"><br/>
+        Top #3 <input type="text" size="1"  name="Top3"><br/>
+        Top #4 <input type="text" size="1" name="Top4"><br/>
+        Top #5 <input type="text" size="1"  name="Top5"><br/>
+        Top #6 <input type="text" size="1"  name="Top6"><br/>
+
+      <input type="button" value="oyna" onclick="numaralar()" /> <br/>
+
+        Sonuç<br />
+        Sonuç Top #1<input type="text" size="1" name="sonuctop1"><br/>
+        Sonuç Top #2<input type="text" size="1" name="sonuctop2"><br/>
+        Sonuç Top #3<input type="text" size="1" name="sonuctop3"><br/>
+        Sonuç Top #4<input type="text" size="1" name="sonuctop4"><br/>
+        Sonuç Top #5<input type="text" size="1" name="sonuctop5"><br/>
+        Sonuç Top #6<input type="text" size="1" name="sonuctop6"><br/>
+
+    </form>
+</body>
+
+</html>

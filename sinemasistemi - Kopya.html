@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .sayfa{
+          width: 360px;
+         
+      }
+        table{
+            background:gray;
+        }
+        table .buton{
+            width: 50px;
+            background:red;
+            text-align: center;
+            line-height: 60px;
+            font-size: 1.5em;
+        }
+        .renk{
+            color: blue;
+        }
+    </style>
+         <script>
+            function checkAlert(){
+                if(document.Form1.checkbox1.checked==true){
+                    alert("Salon 1:Fantastik Canavarlar");
+                  
+                }
+          else if(document.Form1.checkbox2.checked== true){
+                alert("Salon 2:Karanlık Zihinler");
+            }
+           
+          else if(document.Form1.checkbox3.checked== true){
+                alert("Salon 3:Beceriksiz Katil");
+            }
+            }
+        </script>
+</head>
+<body>
+    <form name="Form1" style="color: green;font-size: 90%;" action="#">
+        <input type="radio" name="checkbox1" onclick="checkAlert()" />salon1
+        <input type="radio" name="checkbox1" onclick="checkAlert()" />salon2
+        <input type="radio" name="checkbox1" onclick="checkAlert()" />salon3
+        <br />
+        </form>
+   
+    
+   
+    
+  
+  
+    <div class="sayfa" id="hey">
+    <table>
+        
+        <tr>
+            <td colspan="5" id="goster"></td>
+        </tr>
+        
+        <tr >
+            
+            <td class="buton butonKoltuk"  data-price="30">c1</td>
+            <td class="buton butonKoltuk" data-price="30">c2</td>
+            <td class="buton butonKoltuk" data-price="30">c3</td>
+            <td class="buton butonKoltuk" data-price="30">c4</td>
+        </tr>
+        <tr >
+            <td class="buton butonKoltuk" data-price="40" >b1</td>
+            <td class="buton butonKoltuk" data-price="40">b2</td>
+            <td class="buton  butonKoltuk" data-price="40">b3</td>
+            <td class="buton  butonKoltuk" data-price="40">b4</td>
+        </tr>
+    <tr>
+        <td class="buton butonKoltuk" data-price="50">a1</td>
+        <td class="buton butonKoltuk" data-price="50">a2</td>
+        <td class="buton butonKoltuk" data-price="50">a3</td>
+        <td class="buton butonKoltuk" data-price="50">a4</td>
+        
+    </tr>
+    </table>
+
+</div>
+<input type="text" id="fiyat">
+    <script>
+         
+      
+        var butonKoltuk=document.querySelectorAll(".butonKoltuk");
+        var Goster=document.querySelector("#goster")
+        var sepet=0;
+
+        butonKoltuk.forEach(function (element) {
+        
+            element.onclick=function(e){
+                goster.textContent +=(" "+this.textContent);
+               
+          var  ne= parseInt(element.getAttribute("data-price")); 
+          sepet +=ne;  
+         console.log(sepet);  
+         // document.getElementById("fiyat").innerHTML=sepet;
+                
+
+
+                }
+                  
+               });
+           
+
+
+
+
+       // document.getElementById("goster").disabled=true;
+             // 
+           // function hesapla(){
+           // butonKoltuk.forEach(element => {
+            //if(element.checked){
+               // var fiyat = parseInt(element.getAttribute("data-price"));
+               // var toplam =fiyat*kk;
+               // alert(toplam);
+         // }
+       // });
+      //}
+//
+         </script>
+</body>
+</html>

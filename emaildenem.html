@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol</title>
+    <link rel="stylesheet"  href="style.css">
+    <style>
+        .renk{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+     <div class="banner-img"></div>
+    <form method="POST" onsubmit="return validation();" class="textr">
+   
+  
+      Kullanıcı Adı:<input type="text" id="kullaniciadi" placeholder="Kullanıcı Adı" /><br>
+                email:<input type="email" id="email" name="email" placeholder="E-mail"><br>
+      Şifre:<input type="password" id="sifre" placeholder="Şifre"/><br>
+      Şifre Tekrar:<input type="password" id="sifretekrar" placeholder="Şifre Tekrar"/><br>
+      <input type="submit" name="submit" value="Kayıt Ol">
+      <div id="eresult">
+    
+  </form>
+   <script>
+
+       function validation() {
+         
+           var ad, sifree, sifretekrarr,text,email;
+           email=document.getElementById('email').value;
+           ad=document.getElementById('kullaniciadi').value.length;
+           sifree=document.getElementById("sifre").value.length;
+           sifretekrarr=document.getElementById("sifretekrar").value.length;
+ console.log(ad);
+           if (ad == 0 || sifree == 0 || email=='') { 
+               console.log("çalışş");
+            document.getElementById("eresult").innerHTML="Alanları Doldurduğunuzdan Emin Olun.";
+            return false;
+           }
+           else if (sifree < 8) {
+            document.getElementById("eresult").innerHTML="Şifre 8 Karakterden Az Olmamalıdır.";
+            return false;
+           }
+           else if (sifree != sifretekrarr) {
+            document.getElementById("eresult").innerHTML="Şifreler Aynı Değil Lütfen Kontrol Ediniz.";
+            return false;
+           }
+           else if (ad < 3 || ad > 20) {
+            document.getElementById("eresult").innerHTML="Kullanıcı Adı 3 ve 20 Karakter Arası Olmalıdır.";
+            return false;
+           }
+         
+         
+           
+      window.location.href="file:///C:/Users/Imece/Desktop/ciddi%20misin/sinemasistemi.html";
+      return false;
+       }
+
+   </script>
+</body>
+</html>
